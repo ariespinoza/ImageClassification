@@ -12,9 +12,11 @@ struct CameraScanView: View {
     private(set) var labelData: Classification
     
     @State private var scan = "Safe&Unkown"
+    @State private var capturedImage: UIImage?
     
     var body: some View {
         let predictionLabel = predictionStatus.topLabel
+        
         HStack(spacing: 0) {
             GeometryReader { geo in
                 ZStack(alignment: .center){
