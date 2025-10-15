@@ -66,8 +66,8 @@ struct MenuView: View {
 */
 
 
-/*
- 
+
+ /*
  //Version 1 reto
 import SwiftUI
 
@@ -141,7 +141,7 @@ struct MenuView: View {
                                     }
                                     
                                     VStack {
-                                        NavigationLink(destination: CameraScanView(labelData: Classification())){
+                                        NavigationLink(destination: CameraScanView()){
                                             Text("Escanear")
                                                 .font(.title)
                                                 .foregroundColor(.white)
@@ -187,8 +187,8 @@ struct MenuView: View {
     
 }
  
-
- */
+*/
+ 
 
 
 
@@ -258,19 +258,16 @@ struct MenuView: View {
 
 
 
-/*
+
  
  //Version 2 reto
 import SwiftUI
 
 struct MenuView: View {
     
- 
- @State private var capturedImage: UIImage?
- @State private var isImagePickerPresented = false
- 
- @State private var isPhotoTaken = false
- 
+    @State private var isPhotoTaken = false
+    @State private var goToScan = false
+    
     
     var body: some View {
         
@@ -318,16 +315,14 @@ struct MenuView: View {
                                             )
                                             .animation(.easeInOut(duration: 0.3), value: isPhotoTaken)
                                         
-                                        Button(action: {
-                                            withAnimation {
-                                                isPhotoTaken = true
+                                        Button {
+                                            withAnimation { isPhotoTaken = true }
+                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) {
+                                                withAnimation { isPhotoTaken = false }
+                                                // Unificar: este mismo botón navega al escaneo
+                                                goToScan = true
                                             }
-                                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                                withAnimation {
-                                                    isPhotoTaken = false
-                                                }
-                                            }
-                                        }) {
+                                        } label: {
                                             Image(systemName: "camera")
                                                 .font(.system(size: 40))
                                                 .foregroundColor(.white)
@@ -336,53 +331,36 @@ struct MenuView: View {
                                                 .clipShape(Circle())
                                         }
                                     }
-                                    
-                                    VStack {
-                                        NavigationLink(destination: CameraScanView(labelData: Classification())){
-                                            Text("Escanear")
-                                                .font(.title)
-                                                .foregroundColor(.white)
-                                                .font(Font.varButtonLabel)
-                                                .padding()
-                                                .frame(width: 300.0, height: 50.0)
-                                                .background(Color.verdeBoton)
-                                                .cornerRadius(20)
-                                            
-                                        }
-                                        
-                                        /*
-                                        // Botón Tomar foto
-                                        Button(action: { print("Tomar foto") }) {
-                                            Text("Tomar foto")
-                                                .font(.title)
-                                                .foregroundColor(.white)
-                                                .padding()
-                                                .frame(maxWidth: 400)
-                                                .background(Color.verdeBoton)
-                                                .cornerRadius(20)
-                                        }
-                                         */
+
+                                    // Botón “Escanear” (también navega)
+                                    NavigationLink(destination: CameraScanView()) {
+                                        Text("Escanear")
+                                            .font(.title)
+                                            .foregroundColor(.white)
+                                            .font(Font.varButtonLabel)
+                                            .padding()
+                                            .frame(width: 300.0, height: 50.0)
+                                            .background(Color.verdeBoton)
+                                            .cornerRadius(20)
                                     }
-                                    
-                                    Spacer().frame(height: 150) // espacio para micrófono
+
+                                    // Link oculto para navegación programática desde el botón de la imagen
+                                    NavigationLink("", destination: CameraScanView(), isActive: $goToScan)
+                                        .hidden()
+
+                                    Spacer().frame(height: 150)
                                 }
                                 .padding(50)
                             }
                         }
-                        
-                        
                         MicrophoneButton(color: Color.verdeOscuro)
                     }
                 }
                 .greenSidebar()
-                
             }
-            .navigationTitle("Diagnóstico").navigationBarHidden(true)
+            .navigationTitle("Diagnóstico")
+            .navigationBarHidden(true)
         }
         .navigationViewStyle(StackNavigationViewStyle())
     }
-    
 }
- 
-
- */

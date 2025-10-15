@@ -8,42 +8,40 @@
 import SwiftUI
 import UIKit
 
-// Camera Picker to capture images
 struct CameraPicker: UIViewControllerRepresentable {
     class Coordinator: NSObject, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-        var parent: CameraPicker
-        
-        init(parent: CameraPicker) {
-            self.parent = parent
-        }
-        
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            // Get the image and set it to the captured image
+        let parent: CameraPicker
+        init(_ parent: CameraPicker) { self.parent = parent }
+
+        func imagePickerController(_ picker: UIImagePickerController,
+                                   didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             if let image = info[.originalImage] as? UIImage {
                 parent.capturedImage = image
+                parent.onCaptured?(image)   // callback cuando se toma
             }
-            parent.isImagePickerPresented = false
+            parent.isPresented = false
         }
-        
+
         func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-            parent.isImagePickerPresented = false
+            parent.isPresented = false
         }
     }
-    
+
     @Binding var capturedImage: UIImage?
-    @Binding var isImagePickerPresented: Bool
-    
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(parent: self)
-    }
-    
+    @Binding var isPresented: Bool
+    var onCaptured: ((UIImage) -> Void)? = nil
+
+    func makeCoordinator() -> Coordinator { Coordinator(self) }
+
     func makeUIViewController(context: Context) -> UIImagePickerController {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = context.coordinator
-        imagePicker.sourceType = .camera // Set the source to the camera
-        return imagePicker
+        let picker = UIImagePickerController()
+        picker.delegate = context.coordinator
+        picker.sourceType = .camera
+        picker.cameraCaptureMode = .photo
+        picker.allowsEditing = false
+        return picker
     }
-    
+
     func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {}
 }
 
