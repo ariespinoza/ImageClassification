@@ -120,7 +120,7 @@ final class LiveCameraViewController: UIViewController {
         previewLayer?.contentsGravity = .resizeAspect
         previewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         previewLayer?.connection?.videoOrientation = videoOrientationFromCurrentDeviceOrientation()
-        let scaleFactor = 0.5
+        let scaleFactor = 0.45
         let dimension = min (liveVideoFeedDisplayLayer.frame.size.width * scaleFactor, liveVideoFeedDisplayLayer.frame.size.height * scaleFactor)
         previewLayer?.frame = CGRect(x: 0, y:0, width: dimension + 155, height: dimension + 500)
         

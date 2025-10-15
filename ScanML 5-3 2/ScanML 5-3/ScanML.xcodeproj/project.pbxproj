@@ -17,7 +17,6 @@
 		1123D4012B63539200CB8B16 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1123D3FC2B63539200CB8B16 /* Helpers.swift */; };
 		1123D4052B6356A100CB8B16 /* ShowSignView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1123D4042B6356A100CB8B16 /* ShowSignView.swift */; };
 		FB581B3C2E8DF4A500A0C142 /* CoffeePlantClassifier .mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FB581B3B2E8DF4A500A0C142 /* CoffeePlantClassifier .mlmodel */; };
-		FB581C9A2E8E126F00A0C142 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB581C992E8E126F00A0C142 /* CameraView.swift */; };
 		FB581C9C2E8E12DA00A0C142 /* MicrophoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB581C9B2E8E12DA00A0C142 /* MicrophoneButton.swift */; };
 		FB581C9E2E8E130600A0C142 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB581C9D2E8E130600A0C142 /* Styles.swift */; };
 		FB581CA02E8E140100A0C142 /* MicrophoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB581C9F2E8E140100A0C142 /* MicrophoneView.swift */; };
@@ -60,7 +59,6 @@
 		1123D3FC2B63539200CB8B16 /* Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		1123D4042B6356A100CB8B16 /* ShowSignView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSignView.swift; sourceTree = "<group>"; };
 		FB581B3B2E8DF4A500A0C142 /* CoffeePlantClassifier .mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "CoffeePlantClassifier .mlmodel"; sourceTree = "<group>"; };
-		FB581C992E8E126F00A0C142 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 		FB581C9B2E8E12DA00A0C142 /* MicrophoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneButton.swift; sourceTree = "<group>"; };
 		FB581C9D2E8E130600A0C142 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
 		FB581C9F2E8E140100A0C142 /* MicrophoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneView.swift; sourceTree = "<group>"; };
@@ -183,7 +181,6 @@
 				FB5A059E2B5085C900D09AD3 /* fonts */,
 				FB5A05722B50817E00D09AD3 /* pruebaApp.swift */,
 				FB5A059C2B5081DC00D09AD3 /* MenuView.swift */,
-				FB581C992E8E126F00A0C142 /* CameraView.swift */,
 				FB581C9B2E8E12DA00A0C142 /* MicrophoneButton.swift */,
 				FB581C9F2E8E140100A0C142 /* MicrophoneView.swift */,
 				FB581C9D2E8E130600A0C142 /* Styles.swift */,
@@ -371,7 +368,6 @@
 				1123D4002B63539200CB8B16 /* Constants.swift in Sources */,
 				1123D3EE2B63537700CB8B16 /* PredictionStatus.swift in Sources */,
 				1123D3FD2B63539200CB8B16 /* ClassifierViewModel.swift in Sources */,
-				FB581C9A2E8E126F00A0C142 /* CameraView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

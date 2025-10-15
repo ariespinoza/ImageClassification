@@ -13,12 +13,17 @@ struct CameraScanView: View {
     
     @State private var scan = "Safe&Unkown"
     @State private var capturedImage: UIImage?
+    @State private var scanResult: String?
+    //@State private var advice: String?
+    
+    @State private var isPhotoTaken = false
     
     var body: some View {
         let predictionLabel = predictionStatus.topLabel
         
-        HStack(spacing: 0) {
+        VStack {
             GeometryReader { geo in
+                
                 ZStack(alignment: .center){
                     Color(.white).ignoresSafeArea()
                     
@@ -44,8 +49,8 @@ struct CameraScanView: View {
                     
                 }//ZStack
             } //Geo
+            .greenSidebar()
         }
-        .greenSidebar()
     }
 }
 
@@ -54,6 +59,10 @@ struct CameraScanViewPreviews: PreviewProvider {
         CameraScanView(labelData: Classification())
     }
 }
+
+
+ 
+
 
 
  
