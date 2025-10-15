@@ -212,7 +212,7 @@ struct CameraScanView: View {
                                 }
                             }
                     }
-                    .padding()
+                    .padding(.horizontal, 70)
                     .frame(maxWidth: 600)
                     .background(Color(.secondarySystemBackground))
                     .clipShape(RoundedRectangle(cornerRadius: 16))

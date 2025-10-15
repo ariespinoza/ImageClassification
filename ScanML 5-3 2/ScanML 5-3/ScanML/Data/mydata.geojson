@@ -12,6 +12,9 @@
         "label": "Roya"
     },
     {
-        "label": "Safe&Unkown"
+        "label": "Safe"
+    },
+    {
+        "label": "Unknown"
     }
 ]

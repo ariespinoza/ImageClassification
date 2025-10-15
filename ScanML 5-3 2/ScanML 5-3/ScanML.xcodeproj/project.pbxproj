@@ -29,6 +29,7 @@
 		FB5A05A52B50873700D09AD3 /* FontStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5A05A42B50873700D09AD3 /* FontStyles.swift */; };
 		FB5A05B12B50FFC300D09AD3 /* CameraScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB5A05B02B50FFC300D09AD3 /* CameraScanView.swift */; };
 		FB5A05BE2B54820C00D09AD3 /* YouTubePlayerKit in Frameworks */ = {isa = PBXBuildFile; productRef = FB5A05BD2B54820C00D09AD3 /* YouTubePlayerKit */; };
+		FB68A6AD2EA046E1001225D7 /* CoffeHealthClassifier 1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FB68A6AC2EA046E1001225D7 /* CoffeHealthClassifier 1.mlmodel */; };
 		FBC74B7D2EA01D5C003DB3F2 /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC74B7C2EA01D5C003DB3F2 /* CameraPicker.swift */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		FB5A05A32B5086C300D09AD3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		FB5A05A42B50873700D09AD3 /* FontStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontStyles.swift; sourceTree = "<group>"; };
 		FB5A05B02B50FFC300D09AD3 /* CameraScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScanView.swift; sourceTree = "<group>"; };
+		FB68A6AC2EA046E1001225D7 /* CoffeHealthClassifier 1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "CoffeHealthClassifier 1.mlmodel"; sourceTree = "<group>"; };
 		FBC74B7C2EA01D5C003DB3F2 /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				FB581B3B2E8DF4A500A0C142 /* CoffeePlantClassifier .mlmodel */,
+				FB68A6AC2EA046E1001225D7 /* CoffeHealthClassifier 1.mlmodel */,
 				1123D3EC2B63537700CB8B16 /* PredictionStatus.swift */,
 			);
 			path = Model;
@@ -357,6 +360,7 @@
 			files = (
 				1123D3FE2B63539200CB8B16 /* LiveCameraController.swift in Sources */,
 				FBC74B7D2EA01D5C003DB3F2 /* CameraPicker.swift in Sources */,
+				FB68A6AD2EA046E1001225D7 /* CoffeHealthClassifier 1.mlmodel in Sources */,
 				1123D4012B63539200CB8B16 /* Helpers.swift in Sources */,
 				FB5A05B12B50FFC300D09AD3 /* CameraScanView.swift in Sources */,
 				FB5A059D2B5081DC00D09AD3 /* MenuView.swift in Sources */,
