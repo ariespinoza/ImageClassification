@@ -21,7 +21,7 @@ struct ShowSignView: View {
             
                 
         }
-        .padding(.horizontal, 20)
+        .padding(.horizontal, 50)
     }
        
 }
