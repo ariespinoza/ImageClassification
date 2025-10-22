@@ -175,7 +175,8 @@ import CoreImage
 
 struct CameraScanView: View {
     @EnvironmentObject var predictionStatus: PredictionStatus
-    @StateObject private var classifierViewModel = ClassifierViewModel()
+    @State private var classifierViewModel = ClassifierViewModel()
+    @State private var adviceManager = AdviceManager()
 
     @State private var capturedImage: UIImage?
     @State private var isImagePickerPresented = false
@@ -218,6 +219,37 @@ struct CameraScanView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 16))
                     .padding(.horizontal)
                     .id("diagnosis-section")
+                    
+                    
+                    // Bloque de recomendaciones y precauciones
+                    if let advice = adviceManager.getAdvice(for: predictionStatus.topLabel), !predictionStatus.topLabel.isEmpty {
+                        VStack(alignment: .leading, spacing: 10) {
+                            Text("Diagnóstico: \(advice.label)")
+                                .font(.title3).bold()
+                            Text("Fiabilidad: \(predictionStatus.topConfidence)")
+                                .foregroundColor(.gray)
+
+                            if let prec = advice.precauciones {
+                                Text("Precauciones:")
+                                    .font(.headline)
+                                ForEach(prec, id: \.self) { Text("• \($0)") }
+                            }
+
+                            if let reco = advice.recomendaciones {
+                                Text("Recomendaciones:")
+                                    .font(.headline)
+                                ForEach(reco, id: \.self) { Text("• \($0)") }
+                            }
+
+                            Text("Para más información, consulta a Latte, el asistente de voz.")
+                                .font(.footnote)
+                                .foregroundColor(.secondary)
+                                .padding(.top, 4)
+                        }
+                        .padding(.horizontal, 70)
+                        .padding(.bottom, 20)
+                    }
+
 
                     if capturedImage != nil {
                         Button {
@@ -237,12 +269,16 @@ struct CameraScanView: View {
                 .frame(maxWidth: .infinity)
             }
             .onAppear {
+                
+                // Asegurar datos
+                if classifierViewModel.classifierData.isEmpty {
+                    classifierViewModel.loadJSON()
+                }
+                
+                adviceManager.loadAdvice()
+                
                 // Abrir cámara automáticamente al entrar si no hay imagen
                 if capturedImage == nil {
-                    // Asegurar datos
-                    if classifierViewModel.classifierData.isEmpty {
-                        classifierViewModel.loadJSON()
-                    }
                     isImagePickerPresented = true
                 }
             }
