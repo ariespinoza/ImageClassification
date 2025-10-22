@@ -175,8 +175,8 @@ import CoreImage
 
 struct CameraScanView: View {
     @EnvironmentObject var predictionStatus: PredictionStatus
-    @State private var classifierViewModel = ClassifierViewModel()
-    @State private var adviceManager = AdviceManager()
+    @StateObject private var classifierViewModel = ClassifierViewModel()
+    @StateObject private var adviceManager = AdviceManager()
 
     @State private var capturedImage: UIImage?
     @State private var isImagePickerPresented = false
@@ -184,7 +184,7 @@ struct CameraScanView: View {
     var body: some View {
         ScrollViewReader { proxy in
             ScrollView {
-                VStack(spacing: 16) {
+                VStack(alignment: .center, spacing: 16) {
                     // Preview de la foto
                     if let image = capturedImage {
                         Image(uiImage: image)
@@ -200,7 +200,7 @@ struct CameraScanView: View {
                     }
 
                     // Sección de diagnóstico con ShowSignView (usa tu pipeline existente)
-                    VStack(alignment: .leading, spacing: 8) {
+                    VStack(alignment: .center, spacing: 8) {
                         Text("Diagnóstico")
                             .font(.title2).bold().multilineTextAlignment(.center)
 
@@ -213,7 +213,8 @@ struct CameraScanView: View {
                                 }
                             }
                     }
-                    .padding(.horizontal, 70)
+                    .padding(.horizontal, 90)
+                    .padding(.vertical, 20)
                     .frame(maxWidth: 600)
                     .background(Color(.secondarySystemBackground))
                     .clipShape(RoundedRectangle(cornerRadius: 16))
