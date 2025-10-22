@@ -1,0 +1,57 @@
+[
+  {
+    "label": "Roya",
+    "precauciones": [
+      "Evita que el follaje permanezca húmedo mucho tiempo.",
+      "Mantén buena ventilación en el dosel y un sombreado equilibrado."
+    ],
+    "recomendaciones": [
+      "Mantén una nutrición adecuada para fortalecer la planta.",
+      "Monitorea periódicamente y aplica tratamientos preventivos cuando sea necesario."
+    ]
+  },
+  {
+    "label": "Broca",
+    "precauciones": [
+      "No dejes frutos maduros o caídos; sirven de criaderos para la plaga."
+    ],
+    "recomendaciones": [
+      "Recolecta frecuentemente y elimina los frutos infestados.",
+      "Conserva un manejo adecuado de sombra para reducir el hábitat de la broca."
+    ]
+  },
+  {
+    "label": "Ojo de gallo",
+    "precauciones": [
+      "Evita cultivos muy densos y con poca ventilación.",
+      "Controla la sombra y la humedad excesiva."
+    ],
+    "recomendaciones": [
+      "Realiza podas de limpieza para mejorar la aireación.",
+      "Elimina hojas afectadas y limpia los residuos del suelo."
+    ]
+  },
+  {
+    "label": "Antracnosis",
+    "precauciones": [
+      "Evita que el follaje permanezca mojado.",
+      "Controla la humedad mediante espaciamiento y poda."
+    ],
+    "recomendaciones": [
+      "Usa variedades resistentes cuando sea posible.",
+      "Elimina restos de plantas enfermas y regula el riego (preferir goteo)."
+    ]
+  },
+  {
+    "label": "Sana",
+    "recomendaciones": [
+      "Tu planta se encuentra saludable. Continúa con buen riego, nutrición y monitoreo periódico."
+    ]
+  },
+  {
+    "label": "Desconocido",
+    "recomendaciones": [
+      "No se pudo identificar el objeto de la imagen. Intenta otra foto con buena iluminación y mayor cercanía."
+    ]
+  }
+]
