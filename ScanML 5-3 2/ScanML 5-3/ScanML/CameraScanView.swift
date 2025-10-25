@@ -177,7 +177,7 @@ struct CameraScanView: View {
     
     let userId: String
     
-    @StateObject var ViewModel: ScanViewModel
+    @StateObject private var vm: ScanViewModel
     @EnvironmentObject var predictionStatus: PredictionStatus
     @StateObject private var classifierViewModel = ClassifierViewModel()
     @StateObject private var adviceManager = AdviceManager()
@@ -199,6 +199,19 @@ struct CameraScanView: View {
 
     private var diseaseLabels: Set<String> {
         ["roya", "broca", "ojo de gallo", "antracnosis"]
+    }
+
+     // mapeo a los nombres de la tabla de diagnosticos de la BD
+    private func mapToDBLabel(_ raw: String) -> String {
+        switch normalize(raw) {
+        case "broca": return "Broca"
+        case "ojo de gallo": return "Ojo de gallo"
+        case "roya": return "Roya"
+        case "antracnosis": return "Antracnosis"
+        case "sano": return "Sano"
+        case "desconocido": return "Desconocido"
+        default: return raw
+        }
     }
 
     var body: some View {
@@ -291,6 +304,15 @@ struct CameraScanView: View {
                 }
                 .frame(maxWidth: .infinity)
             }
+            .overlay(alignment: .top) {
+                if vm.isSaving {
+                    ProgressView("Enviando…")
+                        .padding()
+                        .background(.ultraThinMaterial)
+                        .clipShape(RoundedRectangle(cornerRadius: 12))
+                        .padding(.top, 8)
+                }
+            }
             .onAppear {
                 
                 // Asegurar datos
@@ -319,6 +341,20 @@ struct CameraScanView: View {
                         }
                     }
                 })
+            }
+            // En cuanto cambie la etiqueta top después de clasificar enviamos al backend y a la BD
+            .onChange(of: predictionStatus.topLabel) { _, newLabel in
+                guard let image = capturedImage, !newLabel.isEmpty else { return }
+                let labelForDB = mapToDBLabel(newLabel)
+                Task {
+                    await vm.uploadAndCreate(image: image, diagnostico: labelForDB)
+                    showResult = true
+                }
+            }
+            .alert("Resultado", isPresented: $showResult) {
+                Button("OK", role: .cancel) { }
+            } message: {
+                Text(vm.message ?? vm.error ?? "Listo")
             }
             .navigationTitle("Escaneo")
             .navigationBarTitleDisplayMode(.inline)
