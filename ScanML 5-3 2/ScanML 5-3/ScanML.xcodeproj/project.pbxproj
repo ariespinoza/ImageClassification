@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,8 @@
 		EAA81E452EA8ECE700B023B8 /* AdviceManager 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA81E422EA8ECE700B023B8 /* AdviceManager 2.swift */; };
 		EAA81E462EA8ECE700B023B8 /* DiseaseAdvice 2.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAA81E442EA8ECE700B023B8 /* DiseaseAdvice 2.swift */; };
 		EAA81E472EA8ECE800B023B8 /* disease_advice 2.json in Resources */ = {isa = PBXBuildFile; fileRef = EAA81E432EA8ECE700B023B8 /* disease_advice 2.json */; };
+		FB0BBDB02EAD428F00DBF8CE /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0BBDAF2EAD428F00DBF8CE /* APIClient.swift */; };
+		FB0BBDB42EAD499B00DBF8CE /* ScanViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB0BBDB32EAD499B00DBF8CE /* ScanViewModel.swift */; };
 		FB581B3C2E8DF4A500A0C142 /* CoffeePlantClassifier .mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = FB581B3B2E8DF4A500A0C142 /* CoffeePlantClassifier .mlmodel */; };
 		FB581C9C2E8E12DA00A0C142 /* MicrophoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB581C9B2E8E12DA00A0C142 /* MicrophoneButton.swift */; };
 		FB581C9E2E8E130600A0C142 /* Styles.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB581C9D2E8E130600A0C142 /* Styles.swift */; };
@@ -38,6 +40,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FB0BBDA62EAC634B00DBF8CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FB5A05672B50817D00D09AD3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FB5A056E2B50817E00D09AD3;
+			remoteInfo = ScanML;
+		};
 		FB5A05802B50818D00D09AD3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FB5A05672B50817D00D09AD3 /* Project object */;
@@ -68,6 +77,9 @@
 		EAA81E422EA8ECE700B023B8 /* AdviceManager 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AdviceManager 2.swift"; sourceTree = "<group>"; };
 		EAA81E432EA8ECE700B023B8 /* disease_advice 2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "disease_advice 2.json"; sourceTree = "<group>"; };
 		EAA81E442EA8ECE700B023B8 /* DiseaseAdvice 2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiseaseAdvice 2.swift"; sourceTree = "<group>"; };
+		FB0BBDA22EAC634B00DBF8CE /* ImageClassificationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageClassificationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB0BBDAF2EAD428F00DBF8CE /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		FB0BBDB32EAD499B00DBF8CE /* ScanViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewModel.swift; sourceTree = "<group>"; };
 		FB581B3B2E8DF4A500A0C142 /* CoffeePlantClassifier .mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = "CoffeePlantClassifier .mlmodel"; sourceTree = "<group>"; };
 		FB581C9B2E8E12DA00A0C142 /* MicrophoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrophoneButton.swift; sourceTree = "<group>"; };
 		FB581C9D2E8E130600A0C142 /* Styles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Styles.swift; sourceTree = "<group>"; };
@@ -88,7 +100,18 @@
 		FBC74B7C2EA01D5C003DB3F2 /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		FB0BBDA32EAC634B00DBF8CE /* ImageClassificationTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = ImageClassificationTests; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
+
 /* Begin PBXFrameworksBuildPhase section */
+		FB0BBD9F2EAC634B00DBF8CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB5A056C2B50817E00D09AD3 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -174,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				FB5A05712B50817E00D09AD3 /* ScanML */,
+				FB0BBDA32EAC634B00DBF8CE /* ImageClassificationTests */,
 				FB5A05702B50817E00D09AD3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -184,6 +208,7 @@
 				FB5A056F2B50817E00D09AD3 /* ScanML.app */,
 				FB5A057F2B50818D00D09AD3 /* ScanMLTests.xctest */,
 				FB5A05892B50818D00D09AD3 /* ScanMLUITests.xctest */,
+				FB0BBDA22EAC634B00DBF8CE /* ImageClassificationTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -191,6 +216,7 @@
 		FB5A05712B50817E00D09AD3 /* ScanML */ = {
 			isa = PBXGroup;
 			children = (
+				FB0BBDAF2EAD428F00DBF8CE /* APIClient.swift */,
 				FB5A05A32B5086C300D09AD3 /* Info.plist */,
 				FB5A059E2B5085C900D09AD3 /* fonts */,
 				FB5A05722B50817E00D09AD3 /* pruebaApp.swift */,
@@ -202,6 +228,7 @@
 				FBC74B7C2EA01D5C003DB3F2 /* CameraPicker.swift */,
 				FB5A05B02B50FFC300D09AD3 /* CameraScanView.swift */,
 				FB5A05A42B50873700D09AD3 /* FontStyles.swift */,
+				FB0BBDB32EAD499B00DBF8CE /* ScanViewModel.swift */,
 				1123D3F42B63539200CB8B16 /* Foundation */,
 				1123D3EF2B63538E00CB8B16 /* Data */,
 				1123D3EA2B63537700CB8B16 /* Model */,
@@ -234,6 +261,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FB0BBDA12EAC634B00DBF8CE /* ImageClassificationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB0BBDAA2EAC634B00DBF8CE /* Build configuration list for PBXNativeTarget "ImageClassificationTests" */;
+			buildPhases = (
+				FB0BBD9E2EAC634B00DBF8CE /* Sources */,
+				FB0BBD9F2EAC634B00DBF8CE /* Frameworks */,
+				FB0BBDA02EAC634B00DBF8CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FB0BBDA72EAC634B00DBF8CE /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				FB0BBDA32EAC634B00DBF8CE /* ImageClassificationTests */,
+			);
+			name = ImageClassificationTests;
+			packageProductDependencies = (
+			);
+			productName = ImageClassificationTests;
+			productReference = FB0BBDA22EAC634B00DBF8CE /* ImageClassificationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FB5A056E2B50817E00D09AD3 /* ScanML */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB5A05932B50818D00D09AD3 /* Build configuration list for PBXNativeTarget "ScanML" */;
@@ -297,9 +347,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 2600;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					FB0BBDA12EAC634B00DBF8CE = {
+						CreatedOnToolsVersion = 26.0.1;
+						TestTargetID = FB5A056E2B50817E00D09AD3;
+					};
 					FB5A056E2B50817E00D09AD3 = {
 						CreatedOnToolsVersion = 15.0;
 					};
@@ -332,11 +386,19 @@
 				FB5A056E2B50817E00D09AD3 /* ScanML */,
 				FB5A057E2B50818D00D09AD3 /* ScanMLTests */,
 				FB5A05882B50818D00D09AD3 /* ScanMLUITests */,
+				FB0BBDA12EAC634B00DBF8CE /* ImageClassificationTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FB0BBDA02EAC634B00DBF8CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB5A056D2B50817E00D09AD3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -367,6 +429,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FB0BBD9E2EAC634B00DBF8CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FB5A056B2B50817E00D09AD3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -375,7 +444,9 @@
 				EAA81E452EA8ECE700B023B8 /* AdviceManager 2.swift in Sources */,
 				EAA81E462EA8ECE700B023B8 /* DiseaseAdvice 2.swift in Sources */,
 				FBC74B7D2EA01D5C003DB3F2 /* CameraPicker.swift in Sources */,
+				FB0BBDB42EAD499B00DBF8CE /* ScanViewModel.swift in Sources */,
 				FB68A6AD2EA046E1001225D7 /* CoffeHealthClassifier 1.mlmodel in Sources */,
+				FB0BBDB02EAD428F00DBF8CE /* APIClient.swift in Sources */,
 				1123D4012B63539200CB8B16 /* Helpers.swift in Sources */,
 				EAA81E412EA8E08600B023B8 /* Coffeediseaseclassification.mlmodel in Sources */,
 				FB5A05B12B50FFC300D09AD3 /* CameraScanView.swift in Sources */,
@@ -412,6 +483,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FB0BBDA72EAC634B00DBF8CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FB5A056E2B50817E00D09AD3 /* ScanML */;
+			targetProxy = FB0BBDA62EAC634B00DBF8CE /* PBXContainerItemProxy */;
+		};
 		FB5A05812B50818D00D09AD3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FB5A056E2B50817E00D09AD3 /* ScanML */;
@@ -425,6 +501,50 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		FB0BBDA82EAC634B00DBF8CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N878H5QC8Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = itesm.mx.ImageClassificationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScanML.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ScanML";
+			};
+			name = Debug;
+		};
+		FB0BBDA92EAC634B00DBF8CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = N878H5QC8Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = itesm.mx.ImageClassificationTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ScanML.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/ScanML";
+			};
+			name = Release;
+		};
 		FB5A05912B50818D00D09AD3 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -681,6 +801,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FB0BBDAA2EAC634B00DBF8CE /* Build configuration list for PBXNativeTarget "ImageClassificationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB0BBDA82EAC634B00DBF8CE /* Debug */,
+				FB0BBDA92EAC634B00DBF8CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FB5A056A2B50817D00D09AD3 /* Build configuration list for PBXProject "ScanML" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

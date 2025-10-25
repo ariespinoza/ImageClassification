@@ -345,8 +345,12 @@ struct MenuView: View {
                                     }
 
                                     // Link oculto para navegación programática desde el botón de la imagen
-                                    NavigationLink("", destination: CameraScanView(), isActive: $goToScan)
-                                        .hidden()
+                                   let currentUserId = "2dc443aa-fdfb-4265-8130-53a39cdd57e0" // UUID de prueba
+
+                                   NavigationLink("", destination: CameraScanView(userId: currentUserId), isActive: $goToScan)
+                                       .hidden()
+
+
 
                                     Spacer().frame(height: 150)
                                 }

@@ -174,12 +174,23 @@ import Vision
 import CoreImage
 
 struct CameraScanView: View {
+    
+    let userId: String
+    
+    @StateObject var ViewModel: ScanViewModel
     @EnvironmentObject var predictionStatus: PredictionStatus
     @StateObject private var classifierViewModel = ClassifierViewModel()
     @StateObject private var adviceManager = AdviceManager()
+    
+    init(userId: String) {
+        self.userId = userId
+        _vm = StateObject(wrappedValue: ScanViewModel(userId: userId))
+    }
 
     @State private var capturedImage: UIImage?
     @State private var isImagePickerPresented = false
+    @State private var diagnosisText: String = "Esperando diagnóstico…"
+    @State private var showResult = false
     
     // Normaliza y define qué etiquetas son "enfermedad"
     private func normalize(_ s: String) -> String {

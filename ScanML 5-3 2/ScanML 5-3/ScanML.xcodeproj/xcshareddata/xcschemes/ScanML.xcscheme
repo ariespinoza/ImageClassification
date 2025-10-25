@@ -51,6 +51,17 @@
                ReferencedContainer = "container:ScanML.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FB0BBDA12EAC634B00DBF8CE"
+               BuildableName = "ImageClassificationTests.xctest"
+               BlueprintName = "ImageClassificationTests"
+               ReferencedContainer = "container:ScanML.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
