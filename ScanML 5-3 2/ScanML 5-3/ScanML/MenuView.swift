@@ -16,6 +16,7 @@ struct MenuView: View {
     
     var body: some View {
         
+        
         NavigationStack {
             ZStack {
                 HStack(spacing: 0) {
@@ -76,9 +77,11 @@ struct MenuView: View {
                                                 .clipShape(Circle())
                                         }
                                     }
+                                    
+                                    let currentUserId = "2dc443aa-fdfb-4265-8130-53a39cdd57e0" // UUID de prueba
 
                                     // Botón “Escanear” (también navega)
-                                    NavigationLink(destination: CameraScanView()) {
+                                    NavigationLink(destination: CameraScanView(userId: currentUserId), isActive: $goToScan) {
                                         Text("Escanear")
                                             .font(.title)
                                             .foregroundColor(.white)
@@ -89,11 +92,7 @@ struct MenuView: View {
                                             .cornerRadius(20)
                                     }
 
-                                    // Link oculto para navegación programática desde el botón de la imagen
-                                   let currentUserId = "2dc443aa-fdfb-4265-8130-53a39cdd57e0" // UUID de prueba
-
-                                   NavigationLink("", destination: CameraScanView(userId: currentUserId), isActive: $goToScan)
-                                       .hidden()
+                                    
 
 
 
