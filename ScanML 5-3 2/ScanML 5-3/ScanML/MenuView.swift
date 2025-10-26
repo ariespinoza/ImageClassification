@@ -78,7 +78,7 @@ struct MenuView: View {
                                         }
                                     }
                                     
-                                    let currentUserId = "2dc443aa-fdfb-4265-8130-53a39cdd57e0" // UUID de prueba
+                                    let currentUserId = "18d7bd5e-d046-4e4f-9ef3-fe4c8a7877c7" // UUID de prueba
 
                                     // Botón “Escanear” (también navega)
                                     NavigationLink(destination: CameraScanView(userId: currentUserId), isActive: $goToScan) {
